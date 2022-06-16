@@ -1,3 +1,7 @@
+/.idea
+/config/test.yaml
+/cmake-build-debug
+
 bin/*
 obj/*
 lib/*
