@@ -22,7 +22,7 @@
  * You should have received a copy of the GNU General Public License along with LineCoverage-library. If not, see <https://www.gnu.org/licenses/>.
  */
 
-var map = L.map('map').setView([35.306, -80.734], 16);
+var map = L.map('map').setView([35.306, -80.734], 19);
 var map_data_json;
 var overpass_query_string = 'highway~"^(motorway|motorway_link|trunk|trunk_link|primary|secondary|tertiary|unclassified|residential)$"';
 
@@ -37,7 +37,7 @@ var overpass_query_string = 'highway~"^(motorway|motorway_link|trunk|trunk_link|
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	attribution: '<a href="https://github.com/UNCCharlotte-Robotics/LineCoverage-library">LineCoverage-library</a> | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | <a href="https://operations.osmfoundation.org/policies/tiles/">OpenStreetMap usage policy</a> | <a href="https://github.com/UNCCharlotte-Robotics/LineCoverage-library">LineCoverage-library</a>',
-	maxZoom: 18,
+	maxZoom: 19,
 	id: 'mapbox/streets-v11',
 	tileSize: 512,
 	zoomOffset: -1
@@ -58,13 +58,13 @@ map.addLayer(graph);
 L.geoJSON(graph_data, {
     style: function(feature) {
         switch (feature.req) {
-					case "true": return {color: "#2980b9", weight: 2};
-					case "false":   return {color: "#2ca02c", weight: 2, dashArray: '5 15'};
+					case "true": return {color: "#2980b9", weight: 3};
+					case "false": return {color: "#dd0000", weight: 3, dashArray: '5 5'};
         }
     }
 }).addTo(map);
-console.log([graph_data[0].geometry.coordinates[0]])
-map.flyTo([graph_data[0].geometry.coordinates[0][1],graph_data[0].geometry.coordinates[0][0]], 16)
+// console.log([graph_data[0].geometry.coordinates[0]])
+map.flyTo([graph_data[0].geometry.coordinates[0][1],graph_data[0].geometry.coordinates[0][0]], 19)
 
 var drawControl = new L.Control.Draw({
 	position: 'topleft',

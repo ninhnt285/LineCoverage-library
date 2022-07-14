@@ -4,7 +4,7 @@
 
 INSTALL_DIR=${HOME}/opt/
 MAJOR_VERSION=9.5
-MINOR_VERSION=0
+MINOR_VERSION=2
 mkdir -p ${INSTALL_DIR}
 cd ${INSTALL_DIR}
 GUROBI_FILENAME=gurobi${MAJOR_VERSION}.${MINOR_VERSION}_linux64.tar.gz
@@ -19,7 +19,7 @@ sed -i ' 1 s/.*/& -std=c++17/' Makefile
 make -j
 cp libgurobi_c++.a ../../lib/.
 
-echo "export GUROBI_HOME=${INSTALL_DIR}/${GUROBI_DIR}/linux64" >> ${HOME}/.bashrc
+echo "export GUROBI_HOME=${INSTALL_DIR}${GUROBI_DIR}/linux64" >> ${HOME}/.bashrc
 echo 'export PATH="${PATH}:${GUROBI_HOME}/bin"' >> ${HOME}/.bashrc
 echo 'export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"' >> ${HOME}/.bashrc
 echo "export GUROBI_LIB=${GUROBI_LIB}" >> ${HOME}/.bashrc

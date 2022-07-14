@@ -22,9 +22,10 @@
  * You should have received a copy of the GNU General Public License along with LineCoverage-library. If not, see <https://www.gnu.org/licenses/>.
  */
 
-var map = L.map('map').setView([35.306, -80.734], 16);
+var map = L.map('map').setView([35.306, -80.734], 20);
 var map_data_json;
 var overpass_query_string = 'highway~"^(motorway|motorway_link|trunk|trunk_link|primary|secondary|tertiary|unclassified|residential)$"';
+var overpass_query_string = 'highway~"^(footway)$"';
 
 // L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=<access_token>', {
 // 	maxZoom: 20,
@@ -37,7 +38,7 @@ var overpass_query_string = 'highway~"^(motorway|motorway_link|trunk|trunk_link|
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	attribution: '<a href="https://github.com/UNCCharlotte-Robotics/LineCoverage-library">LineCoverage-library</a> | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | <a href="https://operations.osmfoundation.org/policies/tiles/">OpenStreetMap usage policy</a> | <a href="https://github.com/UNCCharlotte-Robotics/LineCoverage-library">LineCoverage-library</a>',
-	maxZoom: 18,
+	maxZoom: 20,
 	id: 'mapbox/streets-v11',
 	tileSize: 512,
 	zoomOffset: -1
