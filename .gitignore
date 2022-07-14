@@ -10,6 +10,9 @@ LineCoverage-dataset/*
 LineCoverage-dataset/
 vim.session
 
+external/glkh
+external/lkh
+
 *.log
 
 # Compiled Object files
