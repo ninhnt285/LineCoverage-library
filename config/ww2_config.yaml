@@ -6,7 +6,7 @@ database:
 
 # 'slc' for single robot
 # 'mlc' for multiple robots
-problem: 'slc'
+problem: 'mlc'
 
 # 'beta2_atsp' (preferred)
 # 'beta2_gtsp'
@@ -23,8 +23,8 @@ solver_mlc: 'mem'
 # 'travel time' for asymmetric travel time based on speed (see travel_time_config)
 cost_function: 'travel_time'
 travel_time_config:
-  service_speed:  5.0
-  deadhead_speed: 8.0
+  service_speed:  0.5
+  deadhead_speed: 0.5
   wind_speed:     0.0
   wind_dir:       45
 
@@ -35,7 +35,7 @@ add_pairwise_nonreq_edges: false
 convert_osm_json: true
 
 # Set the capacity for mlc problem
-capacity: 1800
+capacity: 1000000
 
 # 2opt heuristic to improve routes. It can take a long time for large graphs
 use_2opt: false
@@ -47,8 +47,8 @@ ilp_time_limit: 100000000 # (in seconds. Used only with Gurobi)
 #         custom  (provide a specific node ID for the depot)
 #         none  (no depot, cannot be none for mlc)
 depot:
-  mode: mean
-  ID:   1
+  mode: custom
+  ID:   9728365302
 
 # These are relevant if a custom graph is provided
 input_graph:
