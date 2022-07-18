@@ -6,7 +6,7 @@ database:
 
 # 'slc' for single robot
 # 'mlc' for multiple robots
-problem: 'mlc'
+problem: 'slc'
 
 # 'beta2_atsp' (preferred)
 # 'beta2_gtsp'
