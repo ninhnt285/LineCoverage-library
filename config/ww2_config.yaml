@@ -13,7 +13,7 @@ problem: 'slc'
 # 'beta3_atsp'
 # 'ilp_gurobi' (use only if gurobi is installed and configured)
 # 'ilp_glpk' (use for very small graphs)
-solver_slc: 'ilp_glpk'
+solver_slc: 'ilp_gurobi'
 
 # 'mem'
 # 'ilp_gurobi' (use only if gurobi is installed and configured)
@@ -21,12 +21,17 @@ solver_mlc: 'mem'
 
 # 'euclidean' for euclidean distance
 # 'travel time' for asymmetric travel time based on speed (see travel_time_config)
-cost_function: 'travel_time'
+cost_function: 'ramp'
 travel_time_config:
   service_speed:  0.5
   deadhead_speed: 0.5
   wind_speed:     0.0
   wind_dir:       45
+
+ramp_config:
+  speed:          1.0
+  acceleration:   1.0
+  angular_speed:  0.5236
 
 # Add non-required edges between each pair of vertices
 add_pairwise_nonreq_edges: false
