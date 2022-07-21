@@ -13,7 +13,7 @@ problem: 'slc'
 # 'beta3_atsp'
 # 'ilp_gurobi' (use only if gurobi is installed and configured)
 # 'ilp_glpk' (use for very small graphs)
-solver_slc: 'ilp_gurobi'
+solver_slc: 'ilp_glpk'
 
 # 'mem'
 # 'ilp_gurobi' (use only if gurobi is installed and configured)
@@ -21,10 +21,10 @@ solver_mlc: 'mem'
 
 # 'euclidean' for euclidean distance
 # 'travel time' for asymmetric travel time based on speed (see travel_time_config)
-cost_function: 'ramp'
+cost_function: 'travel_time'
 travel_time_config:
-  service_speed:  0.5
-  deadhead_speed: 0.5
+  service_speed:  1.0
+  deadhead_speed: 1.0
   wind_speed:     0.0
   wind_dir:       45
 
